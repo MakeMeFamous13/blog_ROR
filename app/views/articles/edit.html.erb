@@ -1,0 +1,3 @@
+<%= link_to 'Back', articles_path, class: 'btn btn-primary top-buffer' %>
+<h1>Edit #<%= @article.id.to_s + '/ ' + @article.title %></h1>
+<%= render 'form' %>

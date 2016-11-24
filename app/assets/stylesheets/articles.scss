@@ -1,0 +1,21 @@
+// Place all the styles related to the articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.article {
+  overflow: hidden;
+  margin-bottom: 20px;
+
+  .img-thumbnail {
+    max-width: 200px;
+    max-height: 200px;
+    margin: 0 15px 15px 0;
+  }
+
+  p {
+    text-align: justify;
+  }
+
+  .actions {
+    margin-top: -40px;
+  }
+}

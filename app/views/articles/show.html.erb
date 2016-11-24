@@ -1,0 +1,27 @@
+<%= link_to 'Back', articles_path, class: 'btn btn-primary top-buffer' %>
+<%= render 'article', article: @article %>
+<%= ('<h2>' + @article.comments.size.to_s + ' Comments</h2>').html_safe if @article.comments.size != 0 %>
+<% @article.comments.each do |comment| %>
+    <div class="comment">
+        <p>
+            <%= comment.user %>
+        </p>
+        <p>
+            <%= comment.text %>
+        </p>
+    </div>
+<% end %>
+<h2>Add a comment:</h2>
+<%= form_for([@article, @article.comments.build]) do |f| %>
+    <p>
+      <%= f.label :user %><br>
+      <%= f.text_field :user, class: 'form-control' %>
+    </p>
+    <p>
+      <%= f.label :text %><br>
+      <%= f.text_area :text, class: 'form-control' %>
+    </p>
+    <p>
+      <%= f.submit class: 'btn btn-success' %>
+    </p>
+<% end %>

@@ -1,0 +1,102 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require bootstrap-wysihtml5
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #555;
+  background: #fff;
+}
+
+ul {
+  overflow: hidden;
+}
+
+.wrapper {
+  min-height: 100%;
+  position: relative;
+}
+
+.top-buffer { margin-top:20px; }
+
+.blog-masthead {
+  background: #3a3a3a;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+.blog-header {
+  background: #5F7989;
+  color: #fff;
+  padding-top: 40px;
+}
+
+.main {
+  padding-bottom: 120px;
+
+  .alert {
+    margin: 15px;
+  }
+}
+
+.blog-nav-item {
+  padding: 10px;
+  display: inline-block;
+  color: #ccc;
+  position: relative;
+
+  &:hover, &:focus {
+    text-decoration: none;
+    color: #eee;
+  }
+
+  &.active:after {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    margin-left: -5px;
+    vertical-align: middle;
+    content: " ";
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid;
+    border-left: 5px solid transparent;
+  }
+
+  &.active {
+    color: #fff;
+  }
+}
+
+.blog-footer {
+  padding: 40px 0;
+  color: #999;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-top: 1px solid #e5e5e5;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}

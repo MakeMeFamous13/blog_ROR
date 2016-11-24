@@ -1,0 +1,15 @@
+<div class="article">
+    <h1>
+      <% if defined? index %>
+        <%= link_to article.title, article %>
+      <% else %>
+        <%= article.title %>
+      <% end %>
+    </h1>
+    <%= render 'edit_block', article: article %>
+    <hr />
+    <p>
+      <%= image_tag article.image, alt: article.title, class: 'img-thumbnail pull-left' if article.image? %>
+      <%= article.text.html_safe %>
+    </p>
+</div>
